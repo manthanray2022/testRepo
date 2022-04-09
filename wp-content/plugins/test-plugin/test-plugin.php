@@ -15,6 +15,7 @@ $a = shortcode_atts( array(
 	), $atts );
 
 $b = explode(" ", $a['src']);
+ob_start();
 ?>
 
 <link
@@ -96,6 +97,7 @@ $b = explode(" ", $a['src']);
       });
     </script>
 <?php
+return ob_get_clean();
 }
 
 add_shortcode('swiper-carousel', 'swiper_carousel');
